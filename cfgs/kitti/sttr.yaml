@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+load_path:  ''
+print_freq:  15
+save_freq:  30
+val_freq:  2000
+log_dir:  'logs'
+rng_seed:  54321
+
+# ---------------------------------------------------------------------------- #
+# Training options
+# ---------------------------------------------------------------------------- #
+start_epoch:  1
+epochs: 30000
+train_steps: 1000
+learning_rate:  0.001
+optimizer:  'adam'
+lr_scheduler:  'step'  # step,cosine,ExponentialLR
+warmup_epoch:  -1
+warmup_multiplier:  10
+lr_decay_steps:  [200, 400]
+lr_decay_rate:  0.1
+weight_decay:  0.0001
+momentum:  0.9
+grad_clip_norm: 100.0
+
+# ---------------------------------------------------------------------------- #
+# Data options
+# ---------------------------------------------------------------------------- #
+
+data_name: 'kitti2015'
+task: 'stereo_depth'
+data_root: ''
+batch_size:  1
+num_workers:  7
+max_disp: 192
+height: 256  # 训练时输入图像高
+width: 512  # 训练时输入图像宽
+
+# data augmentation
+augment_scale_size: 0
+augment_input_size: 0
+augment_brightness: 0.4
+augment_contrast: 0.4
+augment_saturation: 0.4
+augment_lighting: 0.1
+
+# ---------------------------------------------------------------------------- #
+# Model
+# ---------------------------------------------------------------------------- #
+use_batch_norm: True
+batch_norm_momentum: 0.1
+model_name: 'sttr'
+channel_dim: 128
+position_encoding: 'sine1d_rel'
+nheads: 8
+num_attn_layers: 6
+context_adjustment_layer: 'cal'
+cal_num_blocks: 8
+cal_feat_dim: 16
+cal_expansion_ratio: 4
+regression_head: 'ot'
+
+
