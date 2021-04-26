@@ -47,7 +47,7 @@ class FullAttention(Module):
         self.use_dropout = use_dropout
         self.dropout = Dropout(attention_dropout)
 
-    def forward(self, queries, keys, values):
+    def forward(self, queries, keys, values, prev=None):
         """ Multi-head scaled dot-product attention, a.k.a full attention.
         Args:
             queries: [N, L, H, D]
@@ -60,17 +60,21 @@ class FullAttention(Module):
         """
 
         # Compute the unnormalized attention and apply the masks
-        c = queries.size(2) * queries.size(3)
+        # print(queries.size())
+        # print(keys.size())
         QK = torch.einsum("nlhd,nshd->nlsh", queries, keys)
 
         # Compute the attention and the weighted average
         softmax_temp = 1. / queries.size(3)**.5  # sqrt(D)
-        A = torch.softmax(softmax_temp * QK, dim=2)
-        if self.use_dropout:
-            A = self.dropout(A)
+        att_score = softmax_temp * QK
+        if prev is not None:
+            # print(att_score.size())
+            # print(prev.size())
+            att_score = att_score + prev
+
+        # print('raw_attn', att_score.size())
+        A = torch.softmax(att_score, dim=2)
 
         queried_values = torch.einsum("nlsh,nshd->nlhd", A, values)
 
-        return queried_values.contiguous(), (QK / c).contiguous()
-        # return queried_values.contiguous(), (QK /(queries.size(2) * (queries.size(3)**.5))).contiguous()
-        # return queried_values.contiguous(), A.contiguous()
+        return queried_values.contiguous(), att_score.contiguous()

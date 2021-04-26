@@ -1,0 +1,431 @@
+[04/26 14:09:57] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:09:57] sceneflow INFO: length of training dataset: 35454
+[04/26 14:09:57] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:09:58] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:09:59] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:09:59] sceneflow INFO: saved!
+[04/26 14:09:59] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:10:11] sceneflow INFO: ########################################################
+[04/26 14:10:11] sceneflow INFO: Train:[1/30001][10/2532]   loss_P:0.3194636919281699,  loss_S:0.9423183311115612,  loss_PAM:0.630661969835108	
+[04/26 14:10:11] sceneflow INFO: Train:[1/30001][10/2532]   loss_PAM_P:0.5494882952083241,  loss_PAM_C:0.05165754529562863,  loss_PAM_S:0.01844757693735036	
+[04/26 14:10:11] sceneflow INFO: Train:[1/30001][10/2532]   loss_avg:0.8887583450837568,  epe_avg:24.29299475929954,  d3_avg:0.9219731417569247	
+[04/26 14:10:11] sceneflow INFO: ########################################################
+[04/26 14:10:17] sceneflow INFO: ########################################################
+[04/26 14:10:17] sceneflow INFO: Train:[1/30001][20/2532]   loss_P:0.3121569227604639,  loss_S:0.6271327251479739,  loss_PAM:0.5632407324654716	
+[04/26 14:10:17] sceneflow INFO: Train:[1/30001][20/2532]   loss_PAM_P:0.4851474570376532,  loss_PAM_C:0.05032465057004066,  loss_PAM_S:0.017355388606942836	
+[04/26 14:10:17] sceneflow INFO: Train:[1/30001][20/2532]   loss_avg:0.8125690108253842,  epe_avg:26.723352250598726,  d3_avg:0.9096154882794335	
+[04/26 14:10:17] sceneflow INFO: ########################################################
+[04/26 14:10:23] sceneflow INFO: ########################################################
+[04/26 14:10:23] sceneflow INFO: Train:[1/30001][30/2532]   loss_P:0.2986040562391281,  loss_S:0.5166350175296107,  loss_PAM:0.5254218962884718	
+[04/26 14:10:23] sceneflow INFO: Train:[1/30001][30/2532]   loss_PAM_P:0.4477052457870976,  loss_PAM_C:0.04861355476802395,  loss_PAM_S:0.018189432910613475	
+[04/26 14:10:23] sceneflow INFO: Train:[1/30001][30/2532]   loss_avg:0.762280527622469,  epe_avg:26.05666914293843,  d3_avg:0.8963751177633962	
+[04/26 14:10:23] sceneflow INFO: ########################################################
+[04/26 14:10:29] sceneflow INFO: ########################################################
+[04/26 14:10:29] sceneflow INFO: Train:[1/30001][40/2532]   loss_P:0.29482522207062417,  loss_S:0.45314503697360436,  loss_PAM:0.4913737305053851	
+[04/26 14:10:29] sceneflow INFO: Train:[1/30001][40/2532]   loss_PAM_P:0.4144773388781199,  loss_PAM_C:0.04657997590739552,  loss_PAM_S:0.018947757984988572	
+[04/26 14:10:29] sceneflow INFO: Train:[1/30001][40/2532]   loss_avg:0.7332391964226235,  epe_avg:24.85122922571694,  d3_avg:0.8874506761388081	
+[04/26 14:10:29] sceneflow INFO: ########################################################
+[04/26 14:10:35] sceneflow INFO: ########################################################
+[04/26 14:10:35] sceneflow INFO: Train:[1/30001][50/2532]   loss_P:0.2923118889916177,  loss_S:0.42938294977534053,  loss_PAM:0.4671323541917053	
+[04/26 14:10:35] sceneflow INFO: Train:[1/30001][50/2532]   loss_PAM_P:0.3895374732274635,  loss_PAM_C:0.04528884085662225,  loss_PAM_S:0.020191273980719203	
+[04/26 14:10:35] sceneflow INFO: Train:[1/30001][50/2532]   loss_avg:0.7149723008567211,  epe_avg:24.03512539583094,  d3_avg:0.8882235241871254	
+[04/26 14:10:35] sceneflow INFO: ########################################################
+[04/26 14:10:41] sceneflow INFO: ########################################################
+[04/26 14:10:41] sceneflow INFO: Train:[1/30001][60/2532]   loss_P:0.28856543146195957,  loss_S:0.40801995455241596,  loss_PAM:0.4435081113068784	
+[04/26 14:10:41] sceneflow INFO: Train:[1/30001][60/2532]   loss_PAM_P:0.36566749166269774,  loss_PAM_C:0.04420322143152112,  loss_PAM_S:0.021023372539364902	
+[04/26 14:10:41] sceneflow INFO: Train:[1/30001][60/2532]   loss_avg:0.695404194417547,  epe_avg:23.972802302876456,  d3_avg:0.8859969748825324	
+[04/26 14:10:41] sceneflow INFO: ########################################################
+[04/26 14:10:48] sceneflow INFO: ########################################################
+[04/26 14:10:48] sceneflow INFO: Train:[1/30001][70/2532]   loss_P:0.2828413716084521,  loss_S:0.3997825942408871,  loss_PAM:0.4236091142389136	
+[04/26 14:10:48] sceneflow INFO: Train:[1/30001][70/2532]   loss_PAM_P:0.345456578362156,  loss_PAM_C:0.04308404474401138,  loss_PAM_S:0.021917805587217003	
+[04/26 14:10:48] sceneflow INFO: Train:[1/30001][70/2532]   loss_avg:0.676044870850066,  epe_avg:23.0813823216398,  d3_avg:0.877148707987557	
+[04/26 14:10:48] sceneflow INFO: ########################################################
+[04/26 14:10:54] sceneflow INFO: ########################################################
+[04/26 14:10:54] sceneflow INFO: Train:[1/30001][80/2532]   loss_P:0.2840976854901255,  loss_S:0.3918070940323818,  loss_PAM:0.4118584245443344	
+[04/26 14:10:54] sceneflow INFO: Train:[1/30001][80/2532]   loss_PAM_P:0.33339751116287564,  loss_PAM_C:0.04223373270145169,  loss_PAM_S:0.02264198636705125	
+[04/26 14:10:54] sceneflow INFO: Train:[1/30001][80/2532]   loss_avg:0.6712564458081751,  epe_avg:22.515888214111328,  d3_avg:0.8806592321690218	
+[04/26 14:10:54] sceneflow INFO: ########################################################
+[04/26 14:11:00] sceneflow INFO: ########################################################
+[04/26 14:11:00] sceneflow INFO: Train:[1/30001][90/2532]   loss_P:0.2813161994729723,  loss_S:0.3846271637376848,  loss_PAM:0.3980782266174044	
+[04/26 14:11:00] sceneflow INFO: Train:[1/30001][90/2532]   loss_PAM_P:0.31945731204289657,  loss_PAM_C:0.04160070210531518,  loss_PAM_S:0.02313763121204389	
+[04/26 14:11:00] sceneflow INFO: Train:[1/30001][90/2532]   loss_avg:0.6594761246508294,  epe_avg:21.86992388505202,  d3_avg:0.8792142114796482	
+[04/26 14:11:00] sceneflow INFO: ########################################################
+[04/26 14:11:06] sceneflow INFO: ########################################################
+[04/26 14:11:06] sceneflow INFO: Train:[1/30001][100/2532]   loss_P:0.2770403393424383,  loss_S:0.3786702247539369,  loss_PAM:0.3845963175639068	
+[04/26 14:11:06] sceneflow INFO: Train:[1/30001][100/2532]   loss_PAM_P:0.306146346917837,  loss_PAM_C:0.04088227718257078,  loss_PAM_S:0.0234798070983869	
+[04/26 14:11:06] sceneflow INFO: Train:[1/30001][100/2532]   loss_avg:0.6457256866563664,  epe_avg:21.34885593452076,  d3_avg:0.8772354362034561	
+[04/26 14:11:06] sceneflow INFO: ########################################################
+[04/26 14:12:02] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:12:02] sceneflow INFO: length of training dataset: 35454
+[04/26 14:12:02] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:12:03] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:12:03] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:12:03] sceneflow INFO: saved!
+[04/26 14:12:03] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:12:15] sceneflow INFO: ########################################################
+[04/26 14:12:15] sceneflow INFO: Train:[1/30001][10/2532]   loss_P:0.31784746186299756,  loss_S:0.9375066215341742,  loss_PAM:0.6245901801369407	
+[04/26 14:12:15] sceneflow INFO: Train:[1/30001][10/2532]   loss_PAM_P:0.5435647774826396,  loss_PAM_C:0.051518994298848236,  loss_PAM_S:0.018441504629498177	
+[04/26 14:12:15] sceneflow INFO: Train:[1/30001][10/2532]   loss_avg:0.8828169324181296,  epe_avg:24.11507086320357,  d3_avg:0.9240798950195312	
+[04/26 14:12:15] sceneflow INFO: ########################################################
+[04/26 14:12:22] sceneflow INFO: ########################################################
+[04/26 14:12:22] sceneflow INFO: Train:[1/30001][20/2532]   loss_P:0.3118798619224912,  loss_S:0.6217142769268581,  loss_PAM:0.5556123001234872	
+[04/26 14:12:22] sceneflow INFO: Train:[1/30001][20/2532]   loss_PAM_P:0.47764984979515984,  loss_PAM_C:0.050024498431455525,  loss_PAM_S:0.0174612199355449	
+[04/26 14:12:22] sceneflow INFO: Train:[1/30001][20/2532]   loss_avg:0.8077973666645232,  epe_avg:26.57474054609026,  d3_avg:0.9089737052009219	
+[04/26 14:12:22] sceneflow INFO: ########################################################
+[04/26 14:12:28] sceneflow INFO: ########################################################
+[04/26 14:12:28] sceneflow INFO: Train:[1/30001][30/2532]   loss_P:0.2977002094830236,  loss_S:0.5104909024892315,  loss_PAM:0.5187216920237387	
+[04/26 14:12:28] sceneflow INFO: Train:[1/30001][30/2532]   loss_PAM_P:0.44116848130379954,  loss_PAM_C:0.04810127207348423,  loss_PAM_S:0.018407461834290335	
+[04/26 14:12:28] sceneflow INFO: Train:[1/30001][30/2532]   loss_avg:0.7569602487548706,  epe_avg:25.92812212051884,  d3_avg:0.894733855801244	
+[04/26 14:12:28] sceneflow INFO: ########################################################
+[04/26 14:12:35] sceneflow INFO: ########################################################
+[04/26 14:12:35] sceneflow INFO: Train:[1/30001][40/2532]   loss_P:0.29404237793713084,  loss_S:0.4462814865315833,  loss_PAM:0.48384815381794444	
+[04/26 14:12:35] sceneflow INFO: Train:[1/30001][40/2532]   loss_PAM_P:0.4074677799533053,  loss_PAM_C:0.045772226118459935,  loss_PAM_S:0.019130093000102336	
+[04/26 14:12:35] sceneflow INFO: Train:[1/30001][40/2532]   loss_avg:0.727615790396202,  epe_avg:24.505645751953125,  d3_avg:0.8845686011198091	
+[04/26 14:12:35] sceneflow INFO: ########################################################
+[04/26 14:12:41] sceneflow INFO: ########################################################
+[04/26 14:12:41] sceneflow INFO: Train:[1/30001][50/2532]   loss_P:0.29062890831161947,  loss_S:0.42375581433960036,  loss_PAM:0.4601748375331654	
+[04/26 14:12:41] sceneflow INFO: Train:[1/30001][50/2532]   loss_PAM_P:0.3830541790116067,  loss_PAM_C:0.044423698356338574,  loss_PAM_S:0.02043560174677302	
+[04/26 14:12:41] sceneflow INFO: Train:[1/30001][50/2532]   loss_avg:0.7084063612947277,  epe_avg:23.767898503471823,  d3_avg:0.8853700979083192	
+[04/26 14:12:41] sceneflow INFO: ########################################################
+[04/26 14:12:47] sceneflow INFO: ########################################################
+[04/26 14:12:47] sceneflow INFO: Train:[1/30001][60/2532]   loss_P:0.2883594119157947,  loss_S:0.4059416610197943,  loss_PAM:0.43799126539074007	
+[04/26 14:12:47] sceneflow INFO: Train:[1/30001][60/2532]   loss_PAM_P:0.3605512209603044,  loss_PAM_C:0.043467407893450535,  loss_PAM_S:0.02123289947688091	
+[04/26 14:12:47] sceneflow INFO: Train:[1/30001][60/2532]   loss_avg:0.6921289157672007,  epe_avg:23.71389859621642,  d3_avg:0.8868260266350918	
+[04/26 14:12:47] sceneflow INFO: ########################################################
+[04/26 14:12:53] sceneflow INFO: ########################################################
+[04/26 14:12:53] sceneflow INFO: Train:[1/30001][70/2532]   loss_P:0.2826417321470422,  loss_S:0.39844812767606386,  loss_PAM:0.41881047860837317	
+[04/26 14:12:53] sceneflow INFO: Train:[1/30001][70/2532]   loss_PAM_P:0.34107559457631176,  loss_PAM_C:0.04255339665941789,  loss_PAM_S:0.021988431188527127	
+[04/26 14:12:53] sceneflow INFO: Train:[1/30001][70/2532]   loss_avg:0.6732126491170534,  epe_avg:22.832338655498667,  d3_avg:0.8768247928417904	
+[04/26 14:12:53] sceneflow INFO: ########################################################
+[04/26 14:13:00] sceneflow INFO: ########################################################
+[04/26 14:13:00] sceneflow INFO: Train:[1/30001][80/2532]   loss_P:0.28332750333680046,  loss_S:0.38965944154762927,  loss_PAM:0.4078297241602415	
+[04/26 14:13:00] sceneflow INFO: Train:[1/30001][80/2532]   loss_PAM_P:0.32970919414066974,  loss_PAM_C:0.041778844631748434,  loss_PAM_S:0.022713554965585102	
+[04/26 14:13:00] sceneflow INFO: Train:[1/30001][80/2532]   loss_avg:0.6678720598603473,  epe_avg:22.225400700981233,  d3_avg:0.8784913170484849	
+[04/26 14:13:00] sceneflow INFO: ########################################################
+[04/26 14:13:06] sceneflow INFO: ########################################################
+[04/26 14:13:06] sceneflow INFO: Train:[1/30001][90/2532]   loss_P:0.2803831288775245,  loss_S:0.38436387888677825,  loss_PAM:0.3940771867285718	
+[04/26 14:13:06] sceneflow INFO: Train:[1/30001][90/2532]   loss_PAM_P:0.31581033569770856,  loss_PAM_C:0.041057144138184225,  loss_PAM_S:0.023256067933698932	
+[04/26 14:13:06] sceneflow INFO: Train:[1/30001][90/2532]   loss_avg:0.6560496733738825,  epe_avg:21.566315519940723,  d3_avg:0.8782467108506423	
+[04/26 14:13:06] sceneflow INFO: ########################################################
+[04/26 14:13:13] sceneflow INFO: ########################################################
+[04/26 14:13:13] sceneflow INFO: Train:[1/30001][100/2532]   loss_P:0.2764670274930425,  loss_S:0.3784192080544953,  loss_PAM:0.3808904424457267	
+[04/26 14:13:13] sceneflow INFO: Train:[1/30001][100/2532]   loss_PAM_P:0.3027809582429357,  loss_PAM_C:0.040345803087595666,  loss_PAM_S:0.023602301651372178	
+[04/26 14:13:13] sceneflow INFO: Train:[1/30001][100/2532]   loss_avg:0.6429876823826591,  epe_avg:21.083994176128122,  d3_avg:0.8766056370026994	
+[04/26 14:13:13] sceneflow INFO: ########################################################
+[04/26 14:13:19] sceneflow INFO: ########################################################
+[04/26 14:13:19] sceneflow INFO: Train:[1/30001][110/2532]   loss_P:0.27408781500013024,  loss_S:0.38216528484413215,  loss_PAM:0.3719893735539806	
+[04/26 14:13:19] sceneflow INFO: Train:[1/30001][110/2532]   loss_PAM_P:0.2935935923376599,  loss_PAM_C:0.039785268187925625,  loss_PAM_S:0.024131571731387493	
+[04/26 14:13:19] sceneflow INFO: Train:[1/30001][110/2532]   loss_avg:0.6353429359895689,  epe_avg:21.249415131302566,  d3_avg:0.8728143647984341	
+[04/26 14:13:19] sceneflow INFO: ########################################################
+[04/26 14:13:31] sceneflow INFO: ########################################################
+[04/26 14:13:31] sceneflow INFO: Train:[1/30001][120/2532]   loss_P:0.2735445137358894,  loss_S:0.3842997292349161,  loss_PAM:0.36512855680520867	
+[04/26 14:13:31] sceneflow INFO: Train:[1/30001][120/2532]   loss_PAM_P:0.286796034983367,  loss_PAM_C:0.03907812034234035,  loss_PAM_S:0.0245340019387524	
+[04/26 14:13:31] sceneflow INFO: Train:[1/30001][120/2532]   loss_avg:0.6313110203289789,  epe_avg:20.77746293564473,  d3_avg:0.8701981246964006	
+[04/26 14:13:31] sceneflow INFO: ########################################################
+[04/26 14:13:53] sceneflow INFO: ########################################################
+[04/26 14:13:53] sceneflow INFO: Train:[1/30001][130/2532]   loss_P:0.2718649691980304,  loss_S:0.388569577390911,  loss_PAM:0.35864049605740844	
+[04/26 14:13:53] sceneflow INFO: Train:[1/30001][130/2532]   loss_PAM_P:0.2801906209410602,  loss_PAM_C:0.03858839222834311,  loss_PAM_S:0.024913427491053824	
+[04/26 14:13:53] sceneflow INFO: Train:[1/30001][130/2532]   loss_avg:0.6259746583363482,  epe_avg:20.719054451425567,  d3_avg:0.8670453629420913	
+[04/26 14:13:53] sceneflow INFO: ########################################################
+[04/26 14:14:09] sceneflow INFO: ########################################################
+[04/26 14:14:09] sceneflow INFO: Train:[1/30001][140/2532]   loss_P:0.2667086574097052,  loss_S:0.3898758150584309,  loss_PAM:0.3524604261132842	
+[04/26 14:14:09] sceneflow INFO: Train:[1/30001][140/2532]   loss_PAM_P:0.27403907060411803,  loss_PAM_C:0.03825714679580208,  loss_PAM_S:0.02510263101719584	
+[04/26 14:14:09] sceneflow INFO: Train:[1/30001][140/2532]   loss_avg:0.6152807793295976,  epe_avg:20.201285960826468,  d3_avg:0.8561751719907666	
+[04/26 14:14:09] sceneflow INFO: ########################################################
+[04/26 14:14:32] sceneflow INFO: ########################################################
+[04/26 14:14:32] sceneflow INFO: Train:[1/30001][150/2532]   loss_P:0.2627321674630342,  loss_S:0.39571203301284485,  loss_PAM:0.34641073111272014	
+[04/26 14:14:32] sceneflow INFO: Train:[1/30001][150/2532]   loss_PAM_P:0.26795112943609817,  loss_PAM_C:0.03758131927311026,  loss_PAM_S:0.025548927011030006	
+[04/26 14:14:32] sceneflow INFO: Train:[1/30001][150/2532]   loss_avg:0.6068748184387257,  epe_avg:19.793341415607376,  d3_avg:0.8477010762454659	
+[04/26 14:14:32] sceneflow INFO: ########################################################
+[04/26 14:14:56] sceneflow INFO: ########################################################
+[04/26 14:14:56] sceneflow INFO: Train:[1/30001][160/2532]   loss_P:0.25729119935020894,  loss_S:0.4034337073749637,  loss_PAM:0.34116837696999497	
+[04/26 14:14:56] sceneflow INFO: Train:[1/30001][160/2532]   loss_PAM_P:0.2627657025774814,  loss_PAM_C:0.036802637755222946,  loss_PAM_S:0.026000023229475717	
+[04/26 14:14:56] sceneflow INFO: Train:[1/30001][160/2532]   loss_avg:0.5968643567576912,  epe_avg:19.25316270389912,  d3_avg:0.8275811661104238	
+[04/26 14:14:56] sceneflow INFO: ########################################################
+[04/26 14:16:39] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:16:39] sceneflow INFO: length of training dataset: 35454
+[04/26 14:16:39] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:16:40] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:16:41] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:16:41] sceneflow INFO: saved!
+[04/26 14:16:41] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:20:57] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:20:57] sceneflow INFO: length of training dataset: 35454
+[04/26 14:20:57] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:20:58] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:20:58] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:20:58] sceneflow INFO: saved!
+[04/26 14:20:58] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:23:50] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:23:50] sceneflow INFO: length of training dataset: 35454
+[04/26 14:23:50] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:23:51] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:23:52] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:23:52] sceneflow INFO: saved!
+[04/26 14:23:52] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:24:14] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:24:14] sceneflow INFO: length of training dataset: 35454
+[04/26 14:24:14] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:24:14] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:24:15] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:24:15] sceneflow INFO: saved!
+[04/26 14:24:15] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:27:10] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:27:11] sceneflow INFO: length of training dataset: 35454
+[04/26 14:27:11] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:27:11] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:27:11] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:27:11] sceneflow INFO: saved!
+[04/26 14:27:11] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:29:32] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:29:32] sceneflow INFO: length of training dataset: 35454
+[04/26 14:29:32] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:29:33] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:29:33] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:29:33] sceneflow INFO: saved!
+[04/26 14:29:33] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:30:51] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:30:51] sceneflow INFO: length of training dataset: 35454
+[04/26 14:30:51] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:30:51] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:30:51] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:30:51] sceneflow INFO: saved!
+[04/26 14:30:51] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:31:06] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:31:06] sceneflow INFO: length of training dataset: 35454
+[04/26 14:31:06] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:31:06] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:31:06] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:31:06] sceneflow INFO: saved!
+[04/26 14:31:06] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:40:46] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:40:46] sceneflow INFO: length of training dataset: 35454
+[04/26 14:40:46] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:40:47] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:40:47] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:40:47] sceneflow INFO: saved!
+[04/26 14:40:47] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:41:13] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:41:13] sceneflow INFO: length of training dataset: 35454
+[04/26 14:41:13] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:41:13] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:41:14] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:41:14] sceneflow INFO: saved!
+[04/26 14:41:14] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:41:40] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:41:40] sceneflow INFO: length of training dataset: 35454
+[04/26 14:41:40] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:41:41] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:41:41] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:41:41] sceneflow INFO: saved!
+[04/26 14:41:41] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:41:54] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:41:55] sceneflow INFO: length of training dataset: 35454
+[04/26 14:41:55] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:41:55] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:41:55] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:41:55] sceneflow INFO: saved!
+[04/26 14:41:55] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:43:44] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:43:45] sceneflow INFO: length of training dataset: 35454
+[04/26 14:43:45] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:43:45] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:43:45] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:43:45] sceneflow INFO: saved!
+[04/26 14:43:45] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:49:06] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:49:06] sceneflow INFO: length of training dataset: 35454
+[04/26 14:49:06] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:49:06] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:49:07] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:49:07] sceneflow INFO: saved!
+[04/26 14:49:07] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:49:27] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:49:27] sceneflow INFO: length of training dataset: 35454
+[04/26 14:49:27] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:49:27] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:49:27] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:49:27] sceneflow INFO: saved!
+[04/26 14:49:27] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:50:48] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:50:48] sceneflow INFO: length of training dataset: 35454
+[04/26 14:50:48] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:50:49] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:50:49] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:50:49] sceneflow INFO: saved!
+[04/26 14:50:49] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:53:37] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:53:37] sceneflow INFO: length of training dataset: 35454
+[04/26 14:53:37] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:53:38] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:53:38] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:53:38] sceneflow INFO: saved!
+[04/26 14:53:38] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:55:22] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:55:22] sceneflow INFO: length of training dataset: 35454
+[04/26 14:55:22] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:55:22] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:55:23] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:55:23] sceneflow INFO: saved!
+[04/26 14:55:23] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:56:03] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:56:03] sceneflow INFO: length of training dataset: 35454
+[04/26 14:56:03] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:56:03] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:56:04] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:56:04] sceneflow INFO: saved!
+[04/26 14:56:04] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:56:42] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:56:42] sceneflow INFO: length of training dataset: 35454
+[04/26 14:56:42] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:56:43] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:56:43] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:56:43] sceneflow INFO: saved!
+[04/26 14:56:43] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:57:55] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:57:55] sceneflow INFO: length of training dataset: 35454
+[04/26 14:57:55] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:57:55] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:57:55] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:57:55] sceneflow INFO: saved!
+[04/26 14:57:55] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:58:17] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:58:17] sceneflow INFO: length of training dataset: 35454
+[04/26 14:58:17] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:58:17] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:58:18] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:58:18] sceneflow INFO: saved!
+[04/26 14:58:18] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 14:59:35] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 14:59:35] sceneflow INFO: length of training dataset: 35454
+[04/26 14:59:35] sceneflow INFO: length of validation dataset: 4370
+[04/26 14:59:35] sceneflow INFO: ==> Saving checkpoint...
+[04/26 14:59:36] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 14:59:36] sceneflow INFO: saved!
+[04/26 14:59:36] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 15:01:35] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 15:01:35] sceneflow INFO: length of training dataset: 35454
+[04/26 15:01:35] sceneflow INFO: length of validation dataset: 4370
+[04/26 15:01:36] sceneflow INFO: ==> Saving checkpoint...
+[04/26 15:01:36] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 15:01:36] sceneflow INFO: saved!
+[04/26 15:01:36] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 15:02:07] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 15:02:07] sceneflow INFO: length of training dataset: 35454
+[04/26 15:02:07] sceneflow INFO: length of validation dataset: 4370
+[04/26 15:02:08] sceneflow INFO: ==> Saving checkpoint...
+[04/26 15:02:08] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 15:02:08] sceneflow INFO: saved!
+[04/26 15:02:08] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 15:02:16] sceneflow INFO: ########################################################
+[04/26 15:02:16] sceneflow INFO: Train:[1/30001][10/17726]   loss_P:0.3149233975193717,  loss_S:1.1251403228803114,  loss_PAM:0.7173475433479656	
+[04/26 15:02:16] sceneflow INFO: Train:[1/30001][10/17726]   loss_PAM_P:0.6311826380816373,  loss_PAM_C:0.0522064207629724,  loss_PAM_S:0.021224053068594498	
+[04/26 15:02:16] sceneflow INFO: Train:[1/30001][10/17726]   loss_avg:0.9435728950933977,  epe_avg:30.167899045077238,  d3_avg:0.9362488063898954	
+[04/26 15:02:16] sceneflow INFO: ########################################################
+[04/26 15:02:21] sceneflow INFO: ########################################################
+[04/26 15:02:21] sceneflow INFO: Train:[1/30001][20/17726]   loss_P:0.30454282249723164,  loss_S:0.7314921120802561,  loss_PAM:0.6918033687841325	
+[04/26 15:02:21] sceneflow INFO: Train:[1/30001][20/17726]   loss_PAM_P:0.6109142587298438,  loss_PAM_C:0.051990012860014326,  loss_PAM_S:0.01806193860691218	
+[04/26 15:02:21] sceneflow INFO: Train:[1/30001][20/17726]   loss_avg:0.8758651287782759,  epe_avg:28.642473493303573,  d3_avg:0.9231030344963074	
+[04/26 15:02:21] sceneflow INFO: ########################################################
+[04/26 15:02:26] sceneflow INFO: ########################################################
+[04/26 15:02:26] sceneflow INFO: Train:[1/30001][30/17726]   loss_P:0.3108820400891765,  loss_S:0.6021270045349675,  loss_PAM:0.6528407633304596	
+[04/26 15:02:26] sceneflow INFO: Train:[1/30001][30/17726]   loss_PAM_P:0.5732961417205872,  loss_PAM_C:0.05146145688429955,  loss_PAM_S:0.017551981092941378	
+[04/26 15:02:26] sceneflow INFO: Train:[1/30001][30/17726]   loss_avg:0.8529561421563548,  epe_avg:28.90407426895634,  d3_avg:0.9236001526155779	
+[04/26 15:02:26] sceneflow INFO: ########################################################
+[04/26 15:02:51] sceneflow INFO: Full config saved to logs/pasm/sceneflow/debug/config.json
+[04/26 15:02:51] sceneflow INFO: length of training dataset: 35454
+[04/26 15:02:51] sceneflow INFO: length of validation dataset: 4370
+[04/26 15:02:52] sceneflow INFO: ==> Saving checkpoint...
+[04/26 15:02:53] sceneflow INFO: Saved in logs/pasm/sceneflow/debug/ckpt_epoch_-1.tar
+[04/26 15:02:53] sceneflow INFO: saved!
+[04/26 15:02:53] sceneflow INFO: epoch: 1, lr: 0.000340
+[04/26 15:03:05] sceneflow INFO: ########################################################
+[04/26 15:03:05] sceneflow INFO: Train:[1/30001][10/2532]   loss_P:0.31586284122683783,  loss_S:0.9517147947441448,  loss_PAM:0.6265309967777946	
+[04/26 15:03:05] sceneflow INFO: Train:[1/30001][10/2532]   loss_PAM_P:0.545503396879543,  loss_PAM_C:0.051529917188666084,  loss_PAM_S:0.018436046486551113	
+[04/26 15:03:05] sceneflow INFO: Train:[1/30001][10/2532]   loss_avg:0.8822312436320565,  epe_avg:24.012084440751508,  d3_avg:0.9269932833584872	
+[04/26 15:03:05] sceneflow INFO: ########################################################
+[04/26 15:03:11] sceneflow INFO: ########################################################
+[04/26 15:03:11] sceneflow INFO: Train:[1/30001][20/2532]   loss_P:0.3113905624264762,  loss_S:0.6304745205811092,  loss_PAM:0.5602980781169165	
+[04/26 15:03:11] sceneflow INFO: Train:[1/30001][20/2532]   loss_PAM_P:0.4821932415167491,  loss_PAM_C:0.05029033124446869,  loss_PAM_S:0.017384062343764873	
+[04/26 15:03:11] sceneflow INFO: Train:[1/30001][20/2532]   loss_avg:0.8102823410715375,  epe_avg:26.337222508021764,  d3_avg:0.9105070971307301	
+[04/26 15:03:11] sceneflow INFO: ########################################################
+[04/26 15:03:17] sceneflow INFO: ########################################################
+[04/26 15:03:17] sceneflow INFO: Train:[1/30001][30/2532]   loss_P:0.29786574023385204,  loss_S:0.516502449589391,  loss_PAM:0.5241003055726329	
+[04/26 15:03:17] sceneflow INFO: Train:[1/30001][30/2532]   loss_PAM_P:0.4462449098787,  loss_PAM_C:0.0484878534991895,  loss_PAM_S:0.018354709139995037	
+[04/26 15:03:17] sceneflow INFO: Train:[1/30001][30/2532]   loss_avg:0.7604990159311602,  epe_avg:25.842176160504742,  d3_avg:0.8955151015712369	
+[04/26 15:03:17] sceneflow INFO: ########################################################
+[04/26 15:03:23] sceneflow INFO: ########################################################
+[04/26 15:03:23] sceneflow INFO: Train:[1/30001][40/2532]   loss_P:0.2952801643348322,  loss_S:0.4514286289127862,  loss_PAM:0.4885927246111195	
+[04/26 15:03:23] sceneflow INFO: Train:[1/30001][40/2532]   loss_PAM_P:0.4117366366270112,  loss_PAM_C:0.04643550678724196,  loss_PAM_S:0.019012860295067473	
+[04/26 15:03:23] sceneflow INFO: Train:[1/30001][40/2532]   loss_avg:0.7323594791133229,  epe_avg:24.782157176878393,  d3_avg:0.8862786249416631	
+[04/26 15:03:23] sceneflow INFO: ########################################################
+[04/26 15:03:29] sceneflow INFO: ########################################################
+[04/26 15:03:29] sceneflow INFO: Train:[1/30001][50/2532]   loss_P:0.29213815547671973,  loss_S:0.4270278846516329,  loss_PAM:0.4627514052040437	
+[04/26 15:03:29] sceneflow INFO: Train:[1/30001][50/2532]   loss_PAM_P:0.38529493265292225,  loss_PAM_C:0.04493540109080427,  loss_PAM_S:0.02032566656742026	
+[04/26 15:03:29] sceneflow INFO: Train:[1/30001][50/2532]   loss_avg:0.712285729599934,  epe_avg:24.04475270065607,  d3_avg:0.8868328928947449	
+[04/26 15:03:29] sceneflow INFO: ########################################################
+[04/26 15:03:35] sceneflow INFO: ########################################################
+[04/26 15:03:35] sceneflow INFO: Train:[1/30001][60/2532]   loss_P:0.2896281883853381,  loss_S:0.40708792600475374,  loss_PAM:0.43860614812764964	
+[04/26 15:03:35] sceneflow INFO: Train:[1/30001][60/2532]   loss_PAM_P:0.3608449853834559,  loss_PAM_C:0.04386915339798224,  loss_PAM_S:0.02118250362758265	
+[04/26 15:03:35] sceneflow INFO: Train:[1/30001][60/2532]   loss_avg:0.6944541525645335,  epe_avg:23.959545792126264,  d3_avg:0.8890044102903272	
+[04/26 15:03:35] sceneflow INFO: ########################################################
+[04/26 15:03:41] sceneflow INFO: ########################################################
+[04/26 15:03:41] sceneflow INFO: Train:[1/30001][70/2532]   loss_P:0.28418362728306945,  loss_S:0.39802325821258655,  loss_PAM:0.4186583138267759	
+[04/26 15:03:41] sceneflow INFO: Train:[1/30001][70/2532]   loss_PAM_P:0.3405426325092853,  loss_PAM_C:0.04290273292383678,  loss_PAM_S:0.02200809080468517	
+[04/26 15:03:41] sceneflow INFO: Train:[1/30001][70/2532]   loss_avg:0.6754069256950432,  epe_avg:23.078741369113118,  d3_avg:0.8798377816106232	
+[04/26 15:03:41] sceneflow INFO: ########################################################
+[04/26 15:03:47] sceneflow INFO: ########################################################
+[04/26 15:03:47] sceneflow INFO: Train:[1/30001][80/2532]   loss_P:0.28506971104645434,  loss_S:0.3904817726141141,  loss_PAM:0.40696308403103437	
+[04/26 15:03:47] sceneflow INFO: Train:[1/30001][80/2532]   loss_PAM_P:0.3284175235916067,  loss_PAM_C:0.042131090099796834,  loss_PAM_S:0.022759042484800755	
+[04/26 15:03:47] sceneflow INFO: Train:[1/30001][80/2532]   loss_avg:0.6701342897650636,  epe_avg:22.49560440911187,  d3_avg:0.8822733502329132	
+[04/26 15:03:47] sceneflow INFO: ########################################################
+[04/26 15:03:52] sceneflow INFO: ########################################################
+[04/26 15:03:52] sceneflow INFO: Train:[1/30001][90/2532]   loss_P:0.2822939663470446,  loss_S:0.3859236417235909,  loss_PAM:0.39323310062780487	
+[04/26 15:03:52] sceneflow INFO: Train:[1/30001][90/2532]   loss_PAM_P:0.3144317108851213,  loss_PAM_C:0.04149242191688045,  loss_PAM_S:0.02331810333039407	
+[04/26 15:03:52] sceneflow INFO: Train:[1/30001][90/2532]   loss_avg:0.6586498667250623,  epe_avg:21.846611578385907,  d3_avg:0.8815877227992802	
+[04/26 15:03:52] sceneflow INFO: ########################################################
+[04/26 15:03:59] sceneflow INFO: ########################################################
+[04/26 15:03:59] sceneflow INFO: Train:[1/30001][100/2532]   loss_P:0.2783256453452724,  loss_S:0.3809441204118256,  loss_PAM:0.3796577444761106	
+[04/26 15:03:59] sceneflow INFO: Train:[1/30001][100/2532]   loss_PAM_P:0.3011008309255732,  loss_PAM_C:0.04074266634070047,  loss_PAM_S:0.023633902883249343	
+[04/26 15:03:59] sceneflow INFO: Train:[1/30001][100/2532]   loss_avg:0.6454117548937844,  epe_avg:21.26622143358287,  d3_avg:0.8814412320014273	
+[04/26 15:03:59] sceneflow INFO: ########################################################
+[04/26 15:04:05] sceneflow INFO: ########################################################
+[04/26 15:04:05] sceneflow INFO: Train:[1/30001][110/2532]   loss_P:0.2757060504979915,  loss_S:0.38463657611125224,  loss_PAM:0.3701966085412481	
+[04/26 15:04:05] sceneflow INFO: Train:[1/30001][110/2532]   loss_PAM_P:0.29137892316322067,  loss_PAM_C:0.040179227453631325,  loss_PAM_S:0.0241490347176656	
+[04/26 15:04:05] sceneflow INFO: Train:[1/30001][110/2532]   loss_avg:0.6371210391993996,  epe_avg:21.207067902023727,  d3_avg:0.8764506879153552	
+[04/26 15:04:05] sceneflow INFO: ########################################################
+[04/26 15:04:11] sceneflow INFO: ########################################################
+[04/26 15:04:11] sceneflow INFO: Train:[1/30001][120/2532]   loss_P:0.27464302930950135,  loss_S:0.38709873773834924,  loss_PAM:0.3633264718223209	
+[04/26 15:04:11] sceneflow INFO: Train:[1/30001][120/2532]   loss_PAM_P:0.284584497678871,  loss_PAM_C:0.03941596179338526,  loss_PAM_S:0.02457875649883481	
+[04/26 15:04:11] sceneflow INFO: Train:[1/30001][120/2532]   loss_avg:0.6323376554102937,  epe_avg:20.721474103691165,  d3_avg:0.8714645519729488	
+[04/26 15:04:11] sceneflow INFO: ########################################################
+[04/26 15:04:17] sceneflow INFO: ########################################################
+[04/26 15:04:17] sceneflow INFO: Train:[1/30001][130/2532]   loss_P:0.27270441462520423,  loss_S:0.3899277754639851,  loss_PAM:0.35665471601577203	
+[04/26 15:04:17] sceneflow INFO: Train:[1/30001][130/2532]   loss_PAM_P:0.2779282974719091,  loss_PAM_C:0.038817742356020986,  loss_PAM_S:0.02494292153855999	
+[04/26 15:04:17] sceneflow INFO: Train:[1/30001][130/2532]   loss_avg:0.6263767590049569,  epe_avg:20.670167529855977,  d3_avg:0.8668876253921567	
+[04/26 15:04:17] sceneflow INFO: ########################################################
+[04/26 15:04:23] sceneflow INFO: ########################################################
+[04/26 15:04:23] sceneflow INFO: Train:[1/30001][140/2532]   loss_P:0.26738096953283813,  loss_S:0.3906160055111486,  loss_PAM:0.3501292180719105	
+[04/26 15:04:23] sceneflow INFO: Train:[1/30001][140/2532]   loss_PAM_P:0.2715018441808139,  loss_PAM_C:0.03838463386533954,  loss_PAM_S:0.025151711320570598	
+[04/26 15:04:23] sceneflow INFO: Train:[1/30001][140/2532]   loss_avg:0.615197665725194,  epe_avg:20.14141588684515,  d3_avg:0.8549556863223408	
+[04/26 15:04:23] sceneflow INFO: ########################################################
+[04/26 15:04:29] sceneflow INFO: ########################################################
+[04/26 15:04:29] sceneflow INFO: Train:[1/30001][150/2532]   loss_P:0.26329955882978756,  loss_S:0.3964988098831366,  loss_PAM:0.3440127545437276	
+[04/26 15:04:29] sceneflow INFO: Train:[1/30001][150/2532]   loss_PAM_P:0.26552099635861565,  loss_PAM_C:0.037649178384056944,  loss_PAM_S:0.025526611300937783	
+[04/26 15:04:29] sceneflow INFO: Train:[1/30001][150/2532]   loss_avg:0.606605597284456,  epe_avg:19.733965993717018,  d3_avg:0.8464960305896027	
+[04/26 15:04:29] sceneflow INFO: ########################################################
+[04/26 15:04:35] sceneflow INFO: ########################################################
+[04/26 15:04:35] sceneflow INFO: Train:[1/30001][160/2532]   loss_P:0.25806464819434266,  loss_S:0.4036814995248866,  loss_PAM:0.33872747541584586	
+[04/26 15:04:35] sceneflow INFO: Train:[1/30001][160/2532]   loss_PAM_P:0.2604445951603214,  loss_PAM_C:0.03679281636285856,  loss_PAM_S:0.025931288916270556	
+[04/26 15:04:35] sceneflow INFO: Train:[1/30001][160/2532]   loss_avg:0.5968288607108667,  epe_avg:19.19792386167538,  d3_avg:0.8269846939152072	
+[04/26 15:04:35] sceneflow INFO: ########################################################
+[04/26 15:04:41] sceneflow INFO: ########################################################
+[04/26 15:04:41] sceneflow INFO: Train:[1/30001][170/2532]   loss_P:0.2530651306025466,  loss_S:0.40880497043941455,  loss_PAM:0.3342638135130642	
+[04/26 15:04:41] sceneflow INFO: Train:[1/30001][170/2532]   loss_PAM_P:0.2562320499479422,  loss_PAM_C:0.036062478278464045,  loss_PAM_S:0.026230802165878097	
+[04/26 15:04:41] sceneflow INFO: Train:[1/30001][170/2532]   loss_avg:0.5876101000964293,  epe_avg:18.73457704231753,  d3_avg:0.8099225972130982	
+[04/26 15:04:41] sceneflow INFO: ########################################################
+[04/26 15:04:52] sceneflow INFO: ########################################################
+[04/26 15:04:52] sceneflow INFO: Train:[1/30001][180/2532]   loss_P:0.24624288547269546,  loss_S:0.4134374290540073,  loss_PAM:0.32894725414270853	
+[04/26 15:04:52] sceneflow INFO: Train:[1/30001][180/2532]   loss_PAM_P:0.25128600952210345,  loss_PAM_C:0.03536746066413532,  loss_PAM_S:0.02643361389739902	
+[04/26 15:04:52] sceneflow INFO: Train:[1/30001][180/2532]   loss_avg:0.5751816986015489,  epe_avg:18.330534529290805,  d3_avg:0.7925058013826444	
+[04/26 15:04:52] sceneflow INFO: ########################################################

@@ -37,7 +37,7 @@ class Transformer(nn.Module):
             if p.dim() > 1:
                 nn.init.xavier_uniform_(p)
 
-    def _alternating_attn(self, feat_left, feat_right, attn_left, attn_right):
+    def _alternating_attn(self, feat_left, feat_right, attn_left=None, attn_right=None):
         """
         Alternate self and cross attention with gradient checkpointing to save memory
 
@@ -55,9 +55,7 @@ class Transformer(nn.Module):
                 feat_left = self_attn(feat_left)
                 feat_right = self_attn(feat_right)
                 # cross-attention
-                feat_left, feat_right, attn_weight, attn_weight_right = cross_attn(feat_left, feat_right)
-                attn_left += attn_weight
-                attn_right += attn_weight_right
+                feat_left, feat_right, attn_left, attn_right = cross_attn(feat_left, feat_right, attn_left, attn_right)
 
             return feat_left, feat_right, attn_left, attn_right
         else:
@@ -74,9 +72,8 @@ class Transformer(nn.Module):
                     def custom_cross_attn(*inputs):
                         return module(*inputs)
                     return custom_cross_attn
-                feat_left, feat_right, attn_weight, attn_weight_right = checkpoint(create_custom_cross_attn(cross_attn), feat_left, feat_right)
-                attn_left += attn_weight
-                attn_right += attn_weight_right
+                feat_left, feat_right, attn_left, attn_right = checkpoint(create_custom_cross_attn(cross_attn), feat_left, feat_right, attn_left, attn_right)
+
             return feat_left, feat_right, attn_left, attn_right
 
     def forward(self, feat_left: torch.Tensor, feat_right: torch.Tensor, cost=None, pos_enc: Optional[Tensor] = None):
@@ -86,19 +83,12 @@ class Transformer(nn.Module):
         :param pos_enc: relative positional encoding, [N,C,H,2W-1]
         :return: cross attention values [N,H,W,W], dim=2 is left image, dim=3 is right image
         """
-        # print('###################################################')
-        # print(feat_left.shape)
-        # print(pos_enc)
-
-        # feat_left = feat_left.permute(0, 2, 3, 1)   # (n, h, w, c)
-        # feat_right = feat_right.permute(0, 2, 3, 1)
-        # print(feat_left.shape)
-        # print(feat_right.shape)
-
         # compute attention
-        feat_left, feat_right, attn_left, attn_right = self._alternating_attn(feat_left, feat_right, cost[0], cost[1])
-        # feat_left = feat_left.permute(0, 3, 1, 2)   # (n, h, w, c)->(h, c, h, w)
-        # feat_right = feat_right.permute(0, 3, 1, 2)
+        if cost is not None:
+            feat_left, feat_right, attn_left, attn_right = self._alternating_attn(feat_left, feat_right, cost[0], cost[1])
+        else:
+            feat_left, feat_right, attn_left, attn_right = self._alternating_attn(feat_left, feat_right)
+
 
         return feat_left, feat_right, (attn_left, attn_right)
 
@@ -108,57 +98,46 @@ class TransformerSelfAttnLayer(nn.Module):
     Self attention layer
     """
 
-    def __init__(self, hidden_dim: int, nhead: int):
+    def __init__(self, hidden_dim: int, nhead: int, dp1 = 0.0, dp2 = 0.0):
         super().__init__()
         self.nhead = nhead
         self.dim = hidden_dim // nhead
 
         # self-attention layer
-        self.q_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
-        self.k_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
-        self.v_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.kqv = nn.Linear(self.dim, 3 * self.dim, bias=False)
         self.self_attn = LinearAttention()
-        self.merge = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.dp = nn.Dropout(dp1)
 
         # feed-forward layer
-        self.mlp = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim, bias=False),
+        self.ff = nn.Sequential(
+            nn.Linear(hidden_dim, 4 * hidden_dim),
             nn.GELU(),
-            nn.Linear(hidden_dim, hidden_dim, bias=False),
+            nn.Linear(4 * hidden_dim, hidden_dim),
+            nn.Dropout(dp2),
         )
 
         # normalization
         self.norm1 = nn.LayerNorm(hidden_dim)
         self.norm2 = nn.LayerNorm(hidden_dim)
 
-    def forward(self, x: Tensor):
+    def mha(self, x, prev=None):
+        bs, h, w, c = x.shape
+        x = x.view(bs, -1, c)
+
+        key, query, value = torch.split(self.kqv(x.view(bs, h * w, self.nhead, self.dim)), self.dim,
+                                        dim=-1)  # B, T, h, emb_s
+        return self.dp(self.self_attn(query, key, value)).view(bs, h, w, c)  # [N, L, (H, D)]
+
+    def forward(self, x: Tensor, prev=None):
         """
         :param feat: image feature [bs, h, w, c]
         :return: updated image feature
         """
         bs, h, w, c = x.shape
-        x = x.view(bs, -1, c)
-        x_norm1 = self.norm1(x)
-        query, key, value = x_norm1, x_norm1, x_norm1
+        x = self.norm1(x + self.mha(x))
+        x = self.norm2(x + self.ff(x))
 
-        # multi-head attention
-        query = self.q_proj(query).view(bs, -1, self.nhead, self.dim)  # [N, L, (H, D)]
-        key = self.k_proj(key).view(bs, -1, self.nhead, self.dim)  # [N, S, (H, D)]
-        value = self.v_proj(value).view(bs, -1, self.nhead, self.dim)
-        message = self.self_attn(query, key, value)  # [N, L, (H, D)]
-        message = self.merge(message.view(bs, -1, self.nhead * self.dim))  # [N, L, C]
-        # message = self.norm2(message)
-
-        # feed-forward network
-        # print(x.size())
-        # print(message.size())
-        # message = torch.cat([x, message], dim=-1)
-        message = x + message
-        message_norm = self.norm2(message)
-        message_norm = self.mlp(message_norm)
-
-
-        return (message + message_norm).view(bs, h, w, c)
+        return x.view(bs, h, w, c)
 
 
 class TransformerCrossAttnLayer(nn.Module):
@@ -166,77 +145,59 @@ class TransformerCrossAttnLayer(nn.Module):
     Cross attention layer
     """
 
-    def __init__(self, hidden_dim: int, nhead: int):
+    def __init__(self, hidden_dim: int, nhead: int, dp1 = 0.0, dp2 = 0.0):
         super().__init__()
         self.nhead = nhead
         self.dim = hidden_dim // nhead
 
         # self-attention layer
-        self.q_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
-        self.k_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
-        self.v_proj = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.kqv = nn.Linear(self.dim, 3 * self.dim, bias=False)
         self.cross_attn = FullAttention()
-        self.merge = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.dp = nn.Dropout(dp1)
 
         # feed-forward layer
-        self.mlp = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim, bias=False),
+        self.ff = nn.Sequential(
+            nn.Linear(hidden_dim, 4 * hidden_dim),
             nn.GELU(),
-            nn.Linear(hidden_dim, hidden_dim, bias=False),
+            nn.Linear(4 * hidden_dim, hidden_dim),
+            nn.Dropout(dp2),
         )
 
         # normalization
         self.norm1 = nn.LayerNorm(hidden_dim)
         self.norm2 = nn.LayerNorm(hidden_dim)
 
+    def resmha(self, feat_left: Tensor, feat_right: Tensor, prev_l=None, prev_r=None):
+        bs, h, w, c = feat_left.shape
+        key_l, query_l, value_l = torch.split(self.kqv(feat_left.view(bs * h, w, self.nhead, self.dim)), self.dim,
+                                        dim=-1)  # B, T, h, emb_s
+        key_r, query_r, value_r = torch.split(self.kqv(feat_right.view(bs * h, w, self.nhead, self.dim)), self.dim,
+                                              dim=-1)  # B, T, h, emb_s
 
-    def forward(self, feat_left: Tensor, feat_right: Tensor):
+        message_l, raw_attn_left = self.cross_attn(query_l, key_r, value_r, prev_l)  # [N, L, (H, D)]
+        # raw_attn_left = raw_attn_left.sum(-1).view(bs, h, w, w)
+
+        message_r, raw_attn_right = self.cross_attn(query_r, key_l, value_l, prev_r)  # [N, L, (H, D)]
+        # raw_attn_right = raw_attn_right.sum(-1).view(bs, h, w, w)
+
+        return [self.dp(message_l).view(bs, h, w, c), self.dp(message_r).view(bs, h, w, c)], [raw_attn_left, raw_attn_right]
+
+    def forward(self, feat_left: Tensor, feat_right: Tensor, prev_l=None, prev_r=None):
         """
         :param feat_left: left image feature, [bs, h, w, c]
         :param feat_right: right image feature, [bs, h, w, c]
         :return: update image feature and attention weight [ bs, c, h, w]
         """
         bs, h, w, c = feat_left.shape
-        feat_left_norm = self.norm1(feat_left)
-        feat_right_norm = self.norm1(feat_right)
+        rmha, prev = self.resmha(feat_left, feat_right, prev_l=prev_l, prev_r=prev_r)
 
-        query_l, key_l, value_l = feat_left_norm, feat_left_norm, feat_left_norm
-        query_r, key_r, value_r = feat_right_norm, feat_right_norm, feat_right_norm
+        feat_left = self.norm1(feat_left + rmha[0])
+        feat_left = self.norm2(feat_left + self.ff(feat_left)).view(bs, h, w, c)
 
-        query_l = self.q_proj(query_l).view(bs * h, -1, self.nhead, self.dim)  # [N, L, (H, D)]
-        key_l = self.k_proj(key_l).view(bs * h, -1, self.nhead, self.dim)  # [N, S, (H, D)]
-        value_l = self.v_proj(value_l).view(bs * h, -1, self.nhead, self.dim)
-        query_r = self.q_proj(query_r).view(bs * h, -1, self.nhead, self.dim)  # [N, L, (H, D)]
-        key_r = self.k_proj(key_r).view(bs * h, -1, self.nhead, self.dim)  # [N, S, (H, D)]
-        value_r = self.v_proj(value_r).view(bs * h, -1, self.nhead, self.dim)
+        feat_right = self.norm1(feat_right + rmha[1])
+        feat_right = self.norm2(feat_right + self.ff(feat_right)).view(bs, h, w, c)
 
-        # attention for left
-        message_l, raw_attn_left = self.cross_attn(query_l, key_r, value_r)  # [N, L, (H, D)]
-        raw_attn_left = raw_attn_left.sum(-1).view(bs, h, w, w)
-        message_l = self.merge(message_l.view(bs, h, w, self.nhead * self.dim))  # [N, L, C]
-        # message_l = self.norm2(message_l).view(bs, h, w, c)
-
-        # feed-forward network for left
-        # message_l = torch.cat([feat_left, message_l], dim=-1)
-        message_l = feat_left + message_l
-        message_l_norm = self.norm2(message_l)
-        message_l_norm = self.mlp(message_l_norm).view(bs, h, w, c)
-        message_l = message_l + message_l_norm
-
-        # attention for right
-        message_r, raw_attn_right = self.cross_attn(query_r, key_l, value_l)  # [N, L, (H, D)]
-        raw_attn_right = raw_attn_right.sum(-1).view(bs, h, w, w)
-        message_r = self.merge(message_r.view(bs, h, w, self.nhead * self.dim))  # [N, L, C]
-        # message_r = self.norm2(message_r).view(bs, h, w, c)
-
-        # feed-forward network for left
-        # message_r = torch.cat([feat_right, message_r], dim=-1)
-        message_r = feat_right + message_r
-        message_r_norm = self.norm2(message_r)
-        message_r_norm = self.mlp(message_r_norm).view(bs, h, w, c)
-        message_r = message_r + message_r_norm
-
-        return message_l, message_r, raw_attn_left, raw_attn_right
+        return feat_left, feat_right, prev[0], prev[1]
 
 
 

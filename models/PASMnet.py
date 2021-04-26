@@ -129,12 +129,14 @@ class CascadedPAM(nn.Module):
 
         b, _, h_s1, w_s1 = fea_left_s1.shape
         b, _, h_s2, w_s2 = fea_left_s2.shape
+        b, _, h_s3, w_s3 = fea_left_s3.shape
 
         # stage 1: 1/16
-        cost_s0 = [
-            torch.zeros(b, h_s1, w_s1, w_s1).to(fea_right_s1.device),
-            torch.zeros(b, h_s1, w_s1, w_s1).to(fea_right_s1.device)
-        ]
+        # cost_s0 = [
+        #     torch.zeros(b, h_s1, w_s1, w_s1).to(fea_right_s1.device),
+        #     torch.zeros(b, h_s1, w_s1, w_s1).to(fea_right_s1.device)
+        # ]
+        # cost_s0 = None
         # print('#########################')
         fea_left_s1 = fea_left_s1.permute(0, 2, 3, 1)   # (n, h, w, c)
         fea_right_s1 = fea_right_s1.permute(0, 2, 3, 1)
@@ -149,7 +151,7 @@ class CascadedPAM(nn.Module):
 
         fea_left_s1 = self.pos_enc_1(fea_left_s1)
         fea_right_s1 = self.pos_enc_1(fea_right_s1)
-        fea_left, fea_right, cost_s1 = self.stage1(fea_left_s1, fea_right_s1, cost_s0)
+        fea_left, fea_right, cost_s1 = self.stage1(fea_left_s1, fea_right_s1)
         # print(cost_s1)
 
         # stage 2: 1/8
@@ -162,10 +164,13 @@ class CascadedPAM(nn.Module):
         fea_left = self.word_merge_2(torch.cat((fea_left, fea_left_s2), 3))
         fea_right = self.word_merge_2(torch.cat((fea_right, fea_right_s2), 3))
 
+        cbh, cw, cw, head = cost_s1[0].shape
+        # print(cost_s1[0].view(b, -1, cw, cw, head).permute(0, 4, 1, 2, 3).size())
         cost_s1_up = [
-            F.interpolate(cost_s1[0].view(b, 1, h_s1, w_s1, w_s1), scale_factor=2, mode='trilinear').squeeze(1),
-            F.interpolate(cost_s1[1].view(b, 1, h_s1, w_s1, w_s1), scale_factor=2, mode='trilinear').squeeze(1)
+            F.interpolate(cost_s1[0].view(b, -1, cw, cw, head).permute(0, 4, 1, 2, 3), scale_factor=2, mode='trilinear').permute(0, 2, 3, 4, 1).reshape(-1, 2 * cw, 2 * cw, head),
+            F.interpolate(cost_s1[1].view(b, -1, cw, cw, head).permute(0, 4, 1, 2, 3), scale_factor=2, mode='trilinear').permute(0, 2, 3, 4, 1).reshape(-1, 2 * cw, 2 * cw, head)
         ]
+        # print(cost_s1_up[0].size())
 
         fea_left = self.pos_enc_2(fea_left)
         fea_right = self.pos_enc_2(fea_right)
@@ -180,9 +185,10 @@ class CascadedPAM(nn.Module):
         fea_left = self.word_merge_3(torch.cat((fea_left, fea_left_s3), 3))
         fea_right = self.word_merge_3(torch.cat((fea_right, fea_right_s3), 3))
 
+        cbh, cw, cw, head = cost_s2[0].shape
         cost_s2_up = [
-            F.interpolate(cost_s2[0].view(b, 1, h_s2, w_s2, w_s2), scale_factor=2, mode='trilinear').squeeze(1),
-            F.interpolate(cost_s2[1].view(b, 1, h_s2, w_s2, w_s2), scale_factor=2, mode='trilinear').squeeze(1)
+            F.interpolate(cost_s2[0].view(b, -1, cw, cw, head).permute(0, 4, 1, 2, 3), scale_factor=2, mode='trilinear').permute(0, 2, 3, 4, 1).reshape(-1, 2 * cw, 2 * cw, head),
+            F.interpolate(cost_s2[1].view(b, -1, cw, cw, head).permute(0, 4, 1, 2, 3), scale_factor=2, mode='trilinear').permute(0, 2, 3, 4, 1).reshape(-1, 2 * cw, 2 * cw, head)
         ]
 
         fea_left = self.pos_enc_3(fea_left)
@@ -190,6 +196,9 @@ class CascadedPAM(nn.Module):
         fea_left, fea_right, cost_s3 = self.stage3(fea_left, fea_right, cost_s2_up)
         # print(cost_s3)
 
+        cost_s1 = [cost_s1[0].sum(-1).view(b, -1, w_s1, w_s1), cost_s1[1].sum(-1).view(b, -1, w_s1, w_s1)]
+        cost_s2 = [cost_s2[0].sum(-1).view(b, -1, w_s2, w_s2), cost_s2[1].sum(-1).view(b, -1, w_s2, w_s2)]
+        cost_s3 = [cost_s3[0].sum(-1).view(b, -1, w_s3, w_s3), cost_s3[1].sum(-1).view(b, -1, w_s3, w_s3)]
 
         return [cost_s1, cost_s2, cost_s3]
 
@@ -216,7 +225,7 @@ class Trans(nn.Module):
         self.channels = channels
         self.transformer = Transformer(channels, nhead=8, num_attn_layers=6)
 
-    def forward(self, fea_left, fea_right, cost):
+    def forward(self, fea_left, fea_right, cost=None):
         fea_left, fea_right, cost = self.transformer(fea_left, fea_right, cost)
 
         return fea_left, fea_right, cost

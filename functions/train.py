@@ -283,10 +283,12 @@ def train(epoch, train_loader, model, optimizer, config):
             loss_PAM_P = loss_pam_photometric(img_left, img_right, att, valid_mask, [mask_left, mask_right])
             loss_PAM_C = loss_pam_cycle(att_cycle, valid_mask)
             loss_PAM_S = loss_pam_smoothness(att)
-            # loss_PAM = loss_PAM_P + loss_PAM_S + loss_PAM_C
-            loss_PAM = loss_PAM_P + loss_PAM_C + 1.6 * loss_PAM_S
+            # loss_PAM = loss_PAM_P + loss_PAM_C + 1.6 * loss_PAM_S
             # losses
-            loss = 1.5 * loss_P + 0.1 * loss_S + 0.5 * loss_PAM
+            # loss = 1.5 * loss_P + 0.1 * loss_S + 0.5 * loss_PAM
+
+            loss_PAM = loss_PAM_P + loss_PAM_S + loss_PAM_C
+            loss = loss_P + 0.1 * loss_S + loss_PAM
 
 
         # with autocast():
